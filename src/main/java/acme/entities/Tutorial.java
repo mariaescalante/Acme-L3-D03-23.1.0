@@ -1,10 +1,15 @@
 
 package acme.entities;
 
+import java.util.Date;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
@@ -36,13 +41,35 @@ public class Tutorial extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			goals;
+	protected String			goal;
 
-	protected Double			totalTime;
+	protected Boolean			draftMode;
 
+
+	public Double totalTime(final List<Session> sessions) {
+		double res = 0.0;
+		if (!sessions.isEmpty())
+			for (final Session sesion : sessions) {
+				final Date a = sesion.getStartTime();
+				final Date b = sesion.getEndTime();
+				double h = 0.0;
+				double m = 0.0;
+				h = Math.abs(b.getTime() / 3600000 - a.getTime() / 3600000);
+				m = Math.abs(b.getTime() / 60000 - a.getTime() / 60000) % 60;
+				final double horasMinutos = m / 60;
+				res += h + horasMinutos;
+			}
+		return res;
+	}
+
+
+	@NotNull
+	@Valid
 	@ManyToOne
-	protected Assistant			assistant;
+	protected Assistant	assistant;
 
+	@NotNull
+	@Valid
 	@ManyToOne
-	protected Course			course;
+	protected Course	course;
 }

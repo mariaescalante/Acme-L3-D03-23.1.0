@@ -1,0 +1,3 @@
+key,code,title,abstract$,goal,draftMode,key:assistant,key:course
+tutorial-01,ABC1234,Tutorial 1,Resumen tutorial 1,Aprender a hablar,false,course-01,assistant-01
+tutorial-02,DEF5678,Tutorial 2,Resumen tutorial 2,Aprender a comer,false,course-02,assistant-02

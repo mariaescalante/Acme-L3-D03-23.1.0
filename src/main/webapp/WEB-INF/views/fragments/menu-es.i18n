@@ -49,6 +49,11 @@ master.menu.provider.favourite-link = Enlace favorito
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
 
+# master.menu.assistant ####################################################
+
+master.menu.assistant.tutorial = Mis tutoriales
+master.menu.assistant = Asistente
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta
