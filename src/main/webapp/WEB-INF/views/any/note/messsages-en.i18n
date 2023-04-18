@@ -1,0 +1,9 @@
+any.note.form.label.instantiationMoment= Instantiation Moment
+any.note.form.label.title = Title
+any.note.form.label.author = Author
+any.note.form.label.message = Message
+any.note.form.label.emailAddress = Email Address
+any.note.form.label.link= Link
+
+any.note.form.button.create= Create note
+

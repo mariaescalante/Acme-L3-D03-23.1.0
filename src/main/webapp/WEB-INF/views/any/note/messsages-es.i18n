@@ -1,0 +1,8 @@
+any.note.form.label.instantiationMoment= Momento de la instancia
+any.note.form.label.title = Titulo
+any.note.form.label.author = Autor
+any.note.form.label.message = Mensaje
+any.note.form.label.emailAddress = Correo
+any.note.form.label.link= Link
+
+any.note.form.button.create= Crear nota
