@@ -16,7 +16,9 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:input-moment code="any.note.form.label.instantiationMoment" path="instantiationMoment"/>	
+	<jstl:if test="${_command=='show'}">
+		<acme:input-moment code="any.note.form.label.instantiationMoment" path="instantiationMoment"/>	
+	</jstl:if>
 	<acme:input-textbox code="any.note.form.label.title" path="title"/>
 	<acme:input-textbox code="any.note.form.label.author" path="author"/>
 	<acme:input-textarea code="any.note.form.label.message" path="message"/>

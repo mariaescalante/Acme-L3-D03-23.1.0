@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import acme.entities.Note;
 import acme.framework.components.accounts.Any;
 import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 
 @Service
@@ -43,7 +44,7 @@ public class AnyNoteCreateService extends AbstractService<Any, Note> {
 	public void bind(final Note object) {
 		assert object != null;
 
-		super.bind(object, "instantiationMoment", "title", "author", "message", "emailAddress", "link");
+		super.bind(object, "title", "author", "message", "emailAddress", "link");
 	}
 
 	@Override
@@ -54,7 +55,7 @@ public class AnyNoteCreateService extends AbstractService<Any, Note> {
 	@Override
 	public void perform(final Note object) {
 		assert object != null;
-
+		object.setInstantiationMoment(MomentHelper.getCurrentMoment());
 		this.repository.save(object);
 	}
 
